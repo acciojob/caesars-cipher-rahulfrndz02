@@ -33,16 +33,21 @@ const lookup = {
 
 function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-	for(let i=0; i<str.length; i++){
-		if(lookup[str[i]] == undefined){
-			decodedArr.push(str[i]);
+	for(let i = 0; i < encodedStr.length; i++){
+		if(lookup[encodedStr[i]] === undefined){
+			decodedArr.push(encodedStr[i]);
 		}
-		else
-			decodedArr.push(lookup[str[i]]);
+		else{
+			decodedArr.push(lookup[encodedStr[i]]);
+		}
 	}
+  // Only change code below this line
 
-  return decodedArr.join(""); //return decodedArr
+	let str = "";
+	for(let i = 0; i < decodedArr.length; i++){
+		str += decodedArr[i];
+	}
+	return str;
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
